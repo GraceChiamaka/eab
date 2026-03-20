@@ -1,16 +1,23 @@
-import { Source_Serif_4, Source_Sans_3 } from "next/font/google"
+import { Source_Serif_4, Source_Sans_3, Poppins } from "next/font/google"
 
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { PageLayout } from "@/components/layouts/PageLayout";
+import { Toaster } from "@/components/ui/sonner";
 
 const fontSourceSans = Source_Sans_3({
 	subsets: ["latin"],
-	variable: "--font-sans",
+	variable: "--font-source-sans",
 })
 
 const fontSourceSerif = Source_Serif_4({
 	subsets: ["latin"],
-	variable: "--font-mono",
+	variable: "--font-source-serif",
+})
+const fontPoppins = Poppins({
+	subsets: ["latin"],
+	weight: ["400", "500"],
+	variable: "--font-poppins",
 })
 
 export default function RootLayout({
@@ -22,10 +29,13 @@ export default function RootLayout({
 		<html
 			lang="en"
 			suppressHydrationWarning
-			className={cn("antialiased", fontSourceSans.variable, "font-sans", fontSourceSerif.variable)}
+			className={cn("antialiased", fontSourceSans.variable, "font-source-sans", fontSourceSerif.variable, fontPoppins.variable)}
 		>
 			<body>
-				{children}
+				<PageLayout>
+					{children}
+				</PageLayout>
+				<Toaster />
 			</body>
 		</html>
 	)

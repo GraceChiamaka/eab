@@ -1,6 +1,7 @@
 import Image, { StaticImageData } from "next/image";
 import { cn } from "@/lib/utils";
 import { Text, Button } from "@/components/ui";
+import { Svg } from "@/assets/svg";
 export const CountryCard = ({
 	cardImg,
 	variant = "primary",
@@ -11,29 +12,57 @@ export const CountryCard = ({
 	cardImg: StaticImageData;
 	variant: "primary" | "secondary" | "accent";
 	label: string;
-	ctaLabel: string
+	ctaLabel: string;
 	badgeLabel: string;
 }) => {
 	return (
-		<div className="relative h-146 w-full" data-component={"CountryCard"}>
-			<div
+		<div className="relative h-146 w-full" data-component={"CountryCard"} style={{
+			backgroundImage: `url(${cardImg.src})`,
+			backgroundSize: 'cover',
+			backgroundRepeat: "no-repeat"
+		}}>
+			<span
 				className={cn(
-					"overlay absolute left-0 z-10 h-full w-full bg-linear-to-b",
+					"relative top-6 left-6 inline-block px-3 py-2 font-source-sans text-sm text-white z-10",
 					variant === "primary"
-						? "bg-transparent xl:from-orange-gradient from-70% xl:to-red-gradient to-30%"
+						? "bg-red-100"
 						: variant === "secondary"
-							? "xl:from-green-gradient from-80% xl:to-green-100 to-20% "
-							: "xl:from-blue-gradient-100 from-60% xl:to-blue-gradient-200 to-20%"
+							? "bg-green-100"
+							: "bg-blue-gradient-300"
 				)}
 			>
-				<span className={cn("text-white text-sm font-source-sans px-3 py-2 inline-block top-6 left-6 relative", variant === "primary" ? "bg-red-100" : variant === "secondary" ? "bg-green-100" : "bg-blue-gradient-300")} >{badgeLabel}</span>
-				<div className={cn(" h-54 md:h-40 lg:h-50 w-full xl:w-3/4 absolute bottom-0 px-6 py-8", variant === "primary" ? "bg-red-100" : variant === "secondary" ? "bg-green-100" : "bg-blue-gradient-300")}>
-					<Text variant={'h4'} className="text-white mb-6">{label}</Text>
-					<Button variant={"default"} className="bg-white text-black rounded-3xl h-12 px-10! font-bold! text-lg">{ctaLabel}</Button>
+				{badgeLabel}
+			</span>
+			<div className="absolute h-106 w-full z-10 bottom-0 left-0" data-component={"backdrop"} style={{
+				backgroundImage: `url(${variant === "primary"
+					? Svg.RedBackdrop.src
+					: variant === "secondary"
+						? Svg.GreenBackdrop.src
+						: Svg.BlueBackdrop.src})`,
+				backgroundSize: 'cover',
+				backgroundRepeat: "no-repeat"
+			}}>
+				<div
+					className={cn(
+						"absolute bottom-0 h-50 w-full px-6 py-8 md:h-44 lg:h-50 z-10",
+						variant === "primary"
+							? "bg-red-100"
+							: variant === "secondary"
+								? "bg-green-100"
+								: "bg-blue-gradient-300"
+					)}
+				>
+					<Text variant={"h4"} className="mb-6 h-12 lg:h-20 xl:h-16 text-xl! text-white">
+						{label}
+					</Text>
+					<Button
+						variant={"default"}
+						className="h-12 rounded-3xl bg-white px-10! text-lg font-bold! text-black"
+					>
+						{ctaLabel}
+					</Button>
 				</div>
-
 			</div>
-			<Image src={cardImg.src} alt={"communities card"} fill objectFit="cover" />
 		</div>
 	);
 };

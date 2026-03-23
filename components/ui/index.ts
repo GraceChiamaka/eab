@@ -1,7 +1,6 @@
 export * from "./aspect-ratio";
 export * from "./brand-card";
 export * from "./button";
-export * from "./carousel";
 export * from "./input";
 export * from "./navigation-menu";
 export * from "./select";

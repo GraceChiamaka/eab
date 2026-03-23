@@ -14,14 +14,14 @@ export type TextVariant =
 	| "span"
 
 const textVariants: Record<TextVariant, string> = {
-	h1: " text-[60px]  font-semibold tracking-tight lg:text-[70px] font-source-serif",
-	h2: " text-[40px] font-semibold tracking-tight lg:text-[60px] font-source-serif",
-	h3: " text-3xl font-semibold tracking-tight lg:text-[40px] font-source-serif",
-	h4: " text-xl font-semibold tracking-tight lg:text-2xl font-source-serif",
-	h5: " text-lg font-semibold lg:text-xl",
+	h1: " text-[60px]  font-semibold tracking-tight lg:text-[70px] leading-[100%] font-source-serif",
+	h2: " text-[40px] font-semibold tracking-tight leading-[100%] lg:text-[60px] font-source-serif",
+	h3: " text-4xl font-semibold tracking-tight lg:text-[40px] font-source-serif",
+	h4: " text-2xl font-semibold tracking-tight lg:text-3xl font-source-serif",
+	h5: " text-lg font-semibold lg:text-xl leading-[160%]  font-source-sans",
 	h6: " text-lg font-source-sans ",
-	p: "leading-7 text-base",
-	span: "leading-7 text-sm",
+	p: "leading-7 text-base  font-source-sans",
+	span: "leading-7 text-sm  font-source-sans",
 }
 
 export interface TextProps {

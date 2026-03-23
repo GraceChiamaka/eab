@@ -111,9 +111,12 @@
   --color-black-100: #222222;
   --color-green-100: #009482;
   --color-blue-100: #edf5ff;
+  --color-blue-200:#004A97;
   --color-blue-300: #07294C;
   --color-blue-400: #0b3057;
+  --color-blue-500: #102439;
   --color-green-gradient: rgba(0, 148, 130, 0.45);
+  --color-green-gradient-200: rgba(0, 148, 130, 0.65);
   --color-orange-gradient: rgba(222,99,40, 0.45);
   --color-red-gradient:rgba(173,22,68, 0.75);
   --color-red-100:#AD1644;

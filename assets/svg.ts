@@ -14,8 +14,15 @@ import Youtube from "./svg/youtube.svg";
 import Tiktok from "./svg/tiktok.svg";
 import Instagram from "./svg/instagram.svg";
 import Twitter from "./svg/twitter.svg";
+import CopyrightLogo from "./svg/copyright_logo.svg";
+import RedBackdrop from "./svg/red-bg.svg";
+import BlueBackdrop from "./svg/blue-bg.svg";
+import GreenBackdrop from "./svg/green-bg.svg";
 
 export const Svg = {
+  BlueBackdrop,
+  GreenBackdrop,
+  CopyrightLogo,
   EllenFoundationLogo,
   HorizonLogo,
   Instagram,
@@ -24,6 +31,7 @@ export const Svg = {
   LongArrowRight,
   MenuIcon,
   PestalozziLogo,
+  RedBackdrop,
   RiseLogo,
   RSAcademicsLogo,
   TeachLogo,

@@ -14,56 +14,54 @@ export const Impact = () => {
 	};
 
 	return (
-		<div className="bg-blue-100 px-4 py-6 lg:py-30 xl:px-30">
-			<div className="mb-16 flex justify-between">
-				<div className="md:max-w-3/4 xl:max-w-2/3">
+		<section data-component={"Impact"} className="bg-blue-100 px-4 py-20 lg:py-30 xl:px-30">
+			<div className="mb-16 flex flex-col lg:flex-row justify-between items-start">
+				<div className="md:max-w-2/3 xl:max-w-2/3">
 					<Text variant="h2">The impact of EAB</Text>
-					<Text variant="h5" className="mt-6">
+					<Text variant="h5" className="mt-6 font-normal font-source-sans">
 						Consectetur adipiscing elit duis tristique sollicitudin nibh sit
 						amet commodo nulla facilisi nullam vehicula ipsum a arcu cursus
 						vitae congue
 					</Text>
 				</div>
-				<div className="flex flex-col items-center lg:flex-row">
+				<div className="flex  items-center flex-row mt-12 lg:mt-0">
 					<Button
 						variant={"ghost"}
-						className={cn("bg-transparent!", activeFilter === "1" ? "text-gray-200" : "text-black")}
-						onClick={() => handleFilterChange("2")}
+						className={cn("bg-transparent! text-2xl font-bold", activeFilter === "1" ? "text-black" : "text-gray-200")}
+						onClick={() => handleFilterChange("1")}
 					>
-						Filter1 <span>/</span>
+						Filter1 <span >/</span>
 					</Button>
 					<Button
 						variant={"ghost"}
-						className={cn("bg-transparent!", activeFilter === "1" ? "text-gray-200" : "text-black")}
+						className={cn("bg-transparent! text-2xl font-bold", activeFilter === "2" ? "text-black" : "text-gray-200")}
 						onClick={() => handleFilterChange("2")}
 					>
-						Filter2 <span>/</span>
+						Filter2 <span className="">/</span>
 					</Button>
 					<Button
 						variant={"ghost"}
-						className={cn("bg-transparent!", activeFilter === "1" ? "text-gray-200" : "text-black")}
-						onClick={() => handleFilterChange("2")}
+						className={cn("bg-transparent! text-2xl font-bold", activeFilter === "3" ? "text-black" : "text-gray-200")}
+						onClick={() => handleFilterChange("3")}
 					>
 						Filter3
 					</Button>
 				</div>
 			</div>
 
-			<div className="slidecontainer flex gap-10">
-				<div className="w-full xl:w-2/3">
-					<div className="relative flex h-125 w-full">
-						<Image src={Png.SportsImg.src} alt="" objectFit="cover" fill />
+			<div className=" flex gap-10 flex-col lg:flex-row items-center">
+				<div className="w-full lg:w-2/3 xl:w-[55%]">
+					<div className="relative flex h-80 lg:h-125 xl:h-150 w-full">
+						<Image src={Png.SportsImg.src} alt="" className=" object-cover" fill />
 					</div>
 				</div>
-				<div className="w-full xl:w-1/3">
-					<Text variant="h3">
+				<div className="w-full lg:w-1/3">
+					<Text variant="h4" className="text-2xl xl:text-[40px]">
 						EAB Partners with Global Fund for Women to Support Girls in
 						Sub-Saharan Africa
 					</Text>
 					<Text variant="p" className="mt-6 mb-6 text-lg">
-						Consectetur adipiscing elit duis tristique sollicitudin nibh sit
-						amet commodo nulla facilisi nullam vehicula ipsum a arcu cursus
-						vitae congue
+						Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.
 					</Text>
 					<Link href="/" className="inline-flex items-center gap-4">
 						<Button
@@ -81,6 +79,6 @@ export const Impact = () => {
 					</Link>
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };

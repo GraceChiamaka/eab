@@ -88,7 +88,7 @@ export const ContactForm = () => {
 		}
 	};
 	return (
-		<form className="mt-10 block" onSubmit={handleSubmit(submitContactForm)}>
+		<form className="mt-10 block pb-12" onSubmit={handleSubmit(submitContactForm)}>
 			<div className="mb-4">
 				<Controller
 					name="subject"
@@ -202,7 +202,7 @@ export const ContactForm = () => {
 					rules={{ required: true }}
 					render={({ field, fieldState }) => (
 						<div>
-							<InputGroup className=" w-full rounded-sm bg-white">
+							<InputGroup className=" w-full rounded-sm bg-white h-50!">
 								<InputGroupTextarea
 									placeholder=""
 									id={"message"}
@@ -225,7 +225,7 @@ export const ContactForm = () => {
 				<Button
 					variant={"secondary"}
 					type={"submit"}
-					className={"h-15 px-14 rounded-xl"}
+					className={"h-15 px-14 rounded-sm"}
 					disabled={apiState.loading}
 				>
 					{apiState.loading ? "Submitting..." : "Submit"}
